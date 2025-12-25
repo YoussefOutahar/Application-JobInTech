@@ -1,34 +1,3 @@
 <router-outlet />
 
 <button matButton="elevated">Disabled</button>
-
-<ul>
-    @for (note of notes; track $index) {
-        <li>
-            Note: {{ note }} -
-            @if (note >= 0 && note <= 9) {
-                <strong>échec</strong>
-            } @else if (note >= 10 && note <= 13) {
-                <strong>moyen</strong>
-            } @else if (note >= 14 && note <= 16) {
-                <strong>bien</strong>
-            } @else {
-                <strong>très bien</strong>
-            }
-        </li>
-    }
-</ul>
-
-<div>------------------------------------------</div>
-<div>------------------------------------------</div>
-<div>------------------------------------------</div>
-
-<ul>
-    <li *ngFor="let note of notes">
-        Note: {{ note }} -
-        <strong *ngIf="note >= 0 && note <= 9">échec</strong>
-        <strong *ngIf="note >= 10 && note <= 13">moyen</strong>
-        <strong *ngIf="note >= 14 && note <= 16">bien</strong>
-        <strong *ngIf="note > 16">très bien</strong>
-    </li>
-</ul>
